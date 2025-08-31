@@ -6,8 +6,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y maven
 
 # Copy the Maven project files
-COPY pom.xml ./
-COPY src ./backend/src
+COPY backend/pom.xml ./
+COPY backend/src ./src
 
 # Build the application
 RUN mvn clean package -DskipTests
