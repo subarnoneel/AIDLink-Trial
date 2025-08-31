@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y maven
 
 # Copy the Maven project files
 COPY pom.xml ./
-COPY src ./src
+COPY src ./backend/src
 
 # Build the application
 RUN mvn clean package -DskipTests
