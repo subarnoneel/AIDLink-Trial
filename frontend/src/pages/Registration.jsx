@@ -314,7 +314,7 @@ const Registration = () => {
       }
       const submitData = { ...formData, id: customId };
       // 1. Register the organization
-      const orgRes = await fetch('http://localhost:8080/api/admin/register-organization', {
+      const orgRes = await fetch('https://aidlink-trial.onrender.com/api/admin/register-organization', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(submitData)
@@ -325,7 +325,7 @@ const Registration = () => {
 
       // 2. Register for selected events
       for (const reg of formData.eventRegistrations) {
-        await fetch(`http://localhost:8080/api/admin/organizations/${orgId}/register-event/${reg.eventId}`, {
+        await fetch(`https://aidlink-trial.onrender.com/api/admin/organizations/${orgId}/register-event/${reg.eventId}`, {
           method: 'POST'
         });
       }

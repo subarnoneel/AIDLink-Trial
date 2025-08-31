@@ -57,7 +57,7 @@ const RecipientDetail = () => {
         
         // Try to fetch from backend API first
         try {
-          const apiUrl = `http://localhost:8080/api/admin/organizations/${recipientId}`;
+          const apiUrl = `https://aidlink-trial.onrender.com/api/admin/organizations/${recipientId}`;
           console.log("Fetching from API URL:", apiUrl);
           
           const apiResponse = await fetch(apiUrl);
@@ -160,7 +160,7 @@ const RecipientDetail = () => {
         alert("Error: You must be logged in to donate.");
         return;
       }
-      const response = await fetch(`http://localhost:8080/api/admin/events/${eventIdInt}/donate`, {
+      const response = await fetch(`https://aidlink-trial.onrender.com/api/admin/events/${eventIdInt}/donate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

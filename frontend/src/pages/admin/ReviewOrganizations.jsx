@@ -13,7 +13,7 @@ export default function ReviewOrganizations() {
 
   const fetchPendingOrganizations = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/admin/pending-organizations');
+      const response = await fetch('https://aidlink-trial.onrender.com/api/admin/pending-organizations');
       if (response.ok) {
         const data = await response.json();
         console.log('Pending organizations:', data);
@@ -30,7 +30,7 @@ export default function ReviewOrganizations() {
 
   const approveOrg = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/admin/approve-organization/${id}`, { 
+      const response = await fetch(`https://aidlink-trial.onrender.com/api/admin/approve-organization/${id}`, { 
         method: 'POST' 
       });
       if (response.ok) {
@@ -53,10 +53,10 @@ export default function ReviewOrganizations() {
     }
 
     console.log('Attempting to reject organization with ID:', id);
-    console.log('Making request to:', `http://localhost:8080/api/admin/reject-organization/${id}`);
+    console.log('Making request to:', `https://aidlink-trial.onrender.com/api/admin/reject-organization/${id}`);
 
     try {
-      const response = await fetch(`http://localhost:8080/api/admin/reject-organization/${id}`, { 
+      const response = await fetch(`https://aidlink-trial.onrender.com/api/admin/reject-organization/${id}`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

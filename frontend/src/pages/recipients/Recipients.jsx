@@ -44,7 +44,7 @@ const Recipients = () => {
         if (eventId) {
           // Fetch organizations registered for a specific event from MongoDB
           try {
-            const orgResponse = await fetch(`http://localhost:8080/api/admin/organizations/approved-for-event/${eventId}`);
+            const orgResponse = await fetch(`https://aidlink-trial.onrender.com/api/admin/organizations/approved-for-event/${eventId}`);
             if (orgResponse.ok) {
               const orgData = await orgResponse.json();
               setOrganizations(orgData || []);
@@ -93,7 +93,7 @@ const Recipients = () => {
           
           // Fetch event details
           try {
-            const eventResponse = await fetch(`http://localhost:8080/api/admin/events/${eventId}`);
+            const eventResponse = await fetch(`https://aidlink-trial.onrender.com/api/admin/events/${eventId}`);
             if (eventResponse.ok) {
               const eventData = await eventResponse.json();
               setSelectedEvent(eventData);
@@ -121,7 +121,7 @@ const Recipients = () => {
         } else {
           // If no eventId is provided, fetch all organizations
           try {
-            const orgResponse = await fetch('http://localhost:8080/api/admin/organizations');
+            const orgResponse = await fetch('https://aidlink-trial.onrender.com/api/admin/organizations');
             if (orgResponse.ok) {
               const orgData = await orgResponse.json();
               setOrganizations(orgData || []);

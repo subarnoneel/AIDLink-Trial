@@ -7,7 +7,9 @@ export default defineConfig({
   base: './',
     server: {
       proxy: {
-        '/api': 'http://localhost:8080'
+        '/api': 'https://aidlink-trial.onrender.com/',
+        changeOrigin: true,
+        secure: false
       }
     }
   })

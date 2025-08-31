@@ -141,7 +141,7 @@ const Navbar = () => {
                   <button
                     onClick={() => {
                       // Call backend logout endpoint
-                      fetch('http://localhost:8080/api/user/logout', { method: 'POST', credentials: 'include' });
+                      fetch('https://aidlink-trial.onrender.com/api/user/logout', { method: 'POST', credentials: 'include' });
                       signOut();
                       window.location.href = '/login';
                     }}
